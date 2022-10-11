@@ -1,0 +1,63 @@
+@use "config/variables" as *;
+@use "layout/layout";
+@use "mixins/mixins" as *;
+
+.container {
+  h2 {
+    @include centering(center, center, row);
+    text-transform: uppercase;
+    background-color: $text-color;
+    color: $bg-color;
+    width: fit-content;
+    margin: $m-a;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 20px;
+  }
+}
+.cards-container {
+  @include postionCentering;
+  overflow: hidden;
+  .cards-bg {
+    @include centering(center, center, row);
+    .card {
+      position: relative;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100px;
+      height: 800px;
+      border-radius: 50px;
+      overflow: hidden;
+      transition: 0.5s;
+      cursor: pointer;
+      margin-right: 10px;
+      &.expand {
+        width: 1050px;
+        border: 2px solid #eec584;
+        & .text {
+          opacity: 1;
+        }
+      }
+      & .text {
+        @include centering(center, center, column);
+        @include postionCentering;
+        opacity: 0;
+        transition: 0.5s;
+        color: #fff;
+        font-weight: bold;
+        & span {
+          font-size: 40px;
+          margin-bottom: 15px;
+        }
+        & button {
+          outline: none;
+          border: none;
+          padding: 10px 30px;
+          border-radius: 20px;
+          color: #fff;
+          background-color: #333;
+        }
+      }
+    }
+  }
+}

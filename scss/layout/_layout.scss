@@ -1,0 +1,43 @@
+@use "config/variables" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700;900&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: $font-style;
+  background-color: $bg-color;
+}
+// Responsive
+.container {
+  margin: $m-a;
+  padding: 0 15px;
+}
+
+/* Small Screens  */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* Medium Screens  */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* Large Screens  */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+// img {
+//   max-width: 100%;
+// }
